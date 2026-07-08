@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import { Loader } from '@react-three/drei';
 import Overlay from './components/Overlay';
 import Scene from './components/Scene';
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 
 function App() {
   const [started, setStarted] = useState(false);
