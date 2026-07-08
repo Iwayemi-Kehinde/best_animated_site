@@ -5,9 +5,9 @@ export const BuildingMaterial = shaderMaterial(
   {
     uTime: 0,
     uProgress: 0, 
-    uColorBase: new THREE.Color('#0a0a0a'),
-    uColorGlass: new THREE.Color('#1a3a4a'),
-    uColorWireframe: new THREE.Color('#d4af37'),
+    uColorBase: new THREE.Color('#1a0b2e'),
+    uColorGlass: new THREE.Color('#2d1b4e'),
+    uColorWireframe: new THREE.Color('#c77dff'),
     uLightIntensity: 0.0,
     uBuildingHeight: 20.0,
   },
@@ -49,13 +49,12 @@ export const BuildingMaterial = shaderMaterial(
 
       // Vertical reveal (Y axis from 0 to uBuildingHeight)
       float revealProgress = uProgress * uBuildingHeight; 
-      float noise = random(vUv * 10.0) * 0.5;
       float threshold = vPosition.y; 
       
       vec3 finalColor = uColorBase;
       float alpha = 1.0;
 
-      if (threshold > revealProgress + noise) {
+      if (threshold > revealProgress) {
         // Wireframe mode
         finalColor = uColorWireframe;
         alpha = line * 0.8 + 0.05; 

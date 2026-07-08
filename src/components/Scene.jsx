@@ -6,9 +6,10 @@ import { CameraControls } from '@react-three/drei';
 import Building from './Building';
 import Nature from './Nature';
 import Environment from './Environment';
+import ShootingStars from './ShootingStars';
 import gsap from 'gsap';
 
-export default function Scene({ started }) {
+export default function Scene({ started, theme }) {
   const cameraControlsRef = useRef();
 
   useEffect(() => {
@@ -41,16 +42,16 @@ export default function Scene({ started }) {
         maxPolarAngle={Math.PI / 2 + 0.05} // Allow slightly below horizon
       />
 
-      <Environment started={started} />
-      <Building started={started} />
+      <Environment started={started} theme={theme} />
+      <ShootingStars theme={theme} />
+      <Building started={started} theme={theme} />
       <Nature started={started} />
 
-      <EffectComposer disableNormalPass multisampling={4}>
+      <EffectComposer disableNormalPass multisampling={0}>
         <Bloom 
           luminanceThreshold={1.0} 
           luminanceSmoothing={0.9} 
-          intensity={1.2} 
-          mipmapBlur 
+          intensity={theme === 'dark' ? 1.5 : 0.8} 
         />
         <Vignette eskil={false} offset={0.1} darkness={1.1} />
         <Noise opacity={0.025} />

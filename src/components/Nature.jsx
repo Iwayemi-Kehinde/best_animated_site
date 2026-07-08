@@ -28,8 +28,8 @@ export default function Nature({ started }) {
   }, [butterflyCount]);
 
   const dustParticles = useMemo(() => {
-    const positions = new Float32Array(1000 * 3);
-    for (let i = 0; i < 1000; i++) {
+    const positions = new Float32Array(200 * 3);
+    for (let i = 0; i < 200; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 40;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 40 + 10;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 40;
@@ -45,7 +45,7 @@ export default function Nature({ started }) {
       gsap.to(state.current, {
         timePassed: 100,
         duration: 30,
-        delay: 5,
+        delay: 2,
         onUpdate: () => {
           butterflyData.forEach(b => {
             if (state.current.timePassed > b.delay && !b.active) {
@@ -102,7 +102,7 @@ export default function Nature({ started }) {
       {/* Butterflies */}
       <instancedMesh ref={butterflyRef} args={[null, null, butterflyCount]}>
         <planeGeometry args={[0.3, 0.3]} />
-        <meshBasicMaterial color="#d4af37" transparent opacity={0.8} side={THREE.DoubleSide} />
+        <meshBasicMaterial color="#9d4edd" transparent opacity={0.8} side={THREE.DoubleSide} />
       </instancedMesh>
       
       {/* Floating Dust Particles */}
@@ -110,7 +110,7 @@ export default function Nature({ started }) {
         <bufferGeometry>
           <bufferAttribute
             attach="attributes-position"
-            count={1000}
+            count={200}
             array={dustParticles}
             itemSize={3}
           />

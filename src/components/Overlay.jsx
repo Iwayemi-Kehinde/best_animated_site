@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Compass } from 'lucide-react';
+import { ArrowRight, Compass, Moon, Sun } from 'lucide-react';
 
 const titleVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -20,7 +20,7 @@ const wordVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.25, 1, 0.5, 1] } }
 };
 
-export default function Overlay({ started, setStarted }) {
+export default function Overlay({ started, setStarted, theme, setTheme }) {
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
 
@@ -74,6 +74,28 @@ export default function Overlay({ started, setStarted }) {
             <a className="nav-link" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>Residences</a>
             <a className="nav-link" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>Amenities</a>
             <a className="nav-link" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>Contact</a>
+            <div className="theme-toggle-container" onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+              <button 
+                className={`theme-toggle ${theme === 'dark' ? 'active' : ''}`}
+                onClick={() => setTheme('dark')}
+                aria-label="Dark Mode"
+              >
+                {theme === 'dark' && (
+                  <motion.div className="theme-toggle-bg" layoutId="themeToggle" transition={{ type: "spring", stiffness: 400, damping: 30 }} />
+                )}
+                <Moon size={16} />
+              </button>
+              <button 
+                className={`theme-toggle ${theme === 'light' ? 'active' : ''}`}
+                onClick={() => setTheme('light')}
+                aria-label="Light Mode"
+              >
+                {theme === 'light' && (
+                  <motion.div className="theme-toggle-bg" layoutId="themeToggle" transition={{ type: "spring", stiffness: 400, damping: 30 }} />
+                )}
+                <Sun size={16} />
+              </button>
+            </div>
           </motion.nav>
         </header>
 

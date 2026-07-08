@@ -6,7 +6,7 @@ import gsap from 'gsap';
 
 extend({ BuildingMaterial });
 
-export default function Building({ started }) {
+export default function Building({ started, theme }) {
   const materialRef = useRef();
   const materialState = useRef({ progress: 0, light: 0 });
   
@@ -14,16 +14,16 @@ export default function Building({ started }) {
     if (started) {
       gsap.to(materialState.current, {
         progress: 1.0,
-        duration: 8,
+        duration: 3, // Reduced from 8s
         ease: "power2.inOut",
-        delay: 1
+        delay: 0.5 // Reduced from 1s
       });
       
       gsap.to(materialState.current, {
         light: 1.5,
-        duration: 4,
+        duration: 2, // Reduced from 4s
         ease: "power1.inOut",
-        delay: 7
+        delay: 2.5 // Reduced from 7s
       });
     }
   }, [started]);
@@ -33,6 +33,12 @@ export default function Building({ started }) {
       materialRef.current.uTime = state.clock.elapsedTime;
       materialRef.current.uProgress = materialState.current.progress;
       materialRef.current.uLightIntensity = materialState.current.light;
+      
+      // Update colors based on theme
+      const isDark = theme === 'dark';
+      materialRef.current.uColorBase = new THREE.Color(isDark ? '#090410' : '#ffffff');
+      materialRef.current.uColorGlass = new THREE.Color(isDark ? '#1a0b2e' : '#f3e8ff');
+      materialRef.current.uColorWireframe = new THREE.Color(isDark ? '#a020f0' : '#5a189a');
     }
   });
 

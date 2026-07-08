@@ -1,10 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;700&display=swap');
 
 :root {
-  --color-bg: #0a0a0a;
-  --color-text: #f5f5f0;
-  --color-gold: #d4af37;
-  --color-emerald: #154c33;
+  /* Premium Dark Mode */
+  --color-bg: #090410;
+  --color-text: #ffffff;
+  --color-accent: #a020f0;
+  --color-accent-light: #e0b0ff;
+  --color-overlay: rgba(9, 4, 16, 0.85);
+}
+
+[data-theme="light"] {
+  /* Premium Light Mode */
+  --color-bg: #fcfaff;
+  --color-text: #1b0b2e;
+  --color-accent: #5a189a;
+  --color-accent-light: #9d4edd;
+  --color-overlay: rgba(252, 250, 255, 0.85);
 }
 
 * {
@@ -14,18 +25,18 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
-  /* Smooth scrolling will be handled by Lenis, but just in case */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Cinzel', serif;
-  font-weight: 400;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
 }
 
 /* Base canvas container */
@@ -42,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Let clicks pass through to 3D canvas by default */
+  pointer-events: none;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -54,11 +65,12 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  pointer-events: auto; /* Enable clicks on header */
+  pointer-events: auto;
 }
 
 .logo {
-  font-family: 'Cinzel', serif;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: 0.1em;
   color: var(--color-text);
@@ -67,6 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-links {
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-link {
@@ -80,7 +93,55 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link:hover {
-  color: var(--color-gold);
+  color: var(--color-accent);
+}
+
+.theme-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.25rem;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="light"] .theme-toggle-container {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  z-index: 2;
+}
+
+.theme-toggle.active {
+  color: #fff;
+}
+
+.theme-toggle-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-accent);
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: 0 0 15px var(--color-accent);
 }
 
 .overlay-content {
@@ -94,7 +155,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  /* Cinematic text setup for Framer Motion */
   overflow: hidden; 
 }
 
@@ -117,9 +177,9 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
   padding: 1rem 2.5rem;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-accent);
   color: var(--color-text);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -136,7 +196,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-gold);
+  background: var(--color-accent);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -144,8 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-button:hover {
-  border-color: var(--color-gold);
-  color: var(--color-bg);
+  color: #fff;
 }
 
 .cta-button:hover::before {
@@ -186,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: var(--color-gold);
+  background-color: var(--color-accent);
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -199,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
 .cursor-outline {
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(212, 175, 55, 0.5); /* Gold outline */
+  border: 1px solid var(--color-accent-light);
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -213,7 +272,8 @@ h1, h2, h3, h4, h5, h6 {
 .cursor-outline.hover {
   width: 60px;
   height: 60px;
-  background-color: rgba(212, 175, 55, 0.1);
+  background-color: var(--color-accent);
+  opacity: 0.2;
 }
 
 /* Loading screen */
@@ -229,11 +289,12 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--color-gold);
+  color: var(--color-accent);
 }
 
 .loader-text {
-  font-family: 'Cinzel', serif;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
   font-size: 2rem;
   letter-spacing: 0.2em;
   margin-bottom: 2rem;
@@ -248,7 +309,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .loader-bar {
   height: 100%;
-  background-color: var(--color-gold);
+  background-color: var(--color-accent);
   width: 0%;
   transition: width 0.3s ease;
 }
@@ -259,6 +320,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1.5rem;
   }
   .nav-links {
-    display: none; /* Hide on mobile for simplicity in hero */
+    display: none;
   }
 }
