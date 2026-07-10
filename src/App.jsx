@@ -25,6 +25,11 @@ const iconPaths = {
   Sparkles: ['M12 3l1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Z', 'M5 17l.8 2.2L8 20l-2.2.8L5 23l-.8-2.2L2 20l2.2-.8L5 17Z'],
   Sun: ['M12 5V2', 'M12 22v-3', 'M5 12H2', 'M22 12h-3', 'M4.2 4.2l2.1 2.1', 'M17.7 17.7l2.1 2.1', 'M19.8 4.2l-2.1 2.1', 'M6.3 17.7l-2.1 2.1', 'M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z'],
   X: ['M18 6 6 18', 'M6 6l12 12'],
+  Map: ['M21 3l-6 4-6-4-6 4v14l6-4 6 4 6-4V3z', 'M8 7v14', 'M16 3v14'],
+  Coffee: ['M18 8h1a4 4 0 0 1 0 8h-1', 'M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z', 'M6 1v3', 'M10 1v3', 'M14 1v3'],
+  Instagram: ['M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z', 'M6.5 6.5h.01', 'M4 4h16v16H4z'],
+  Twitter: ['M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z'],
+  Linkedin: ['M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z', 'M2 9h4v12H2z', 'M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z'],
 };
 
 function IconSvg({ name, size = 18, className }) {
@@ -57,6 +62,11 @@ const ShieldCheck = makeIcon('ShieldCheck');
 const Sparkles = makeIcon('Sparkles');
 const Sun = makeIcon('Sun');
 const X = makeIcon('X');
+const MapIcon = makeIcon('Map');
+const Coffee = makeIcon('Coffee');
+const Instagram = makeIcon('Instagram');
+const Twitter = makeIcon('Twitter');
+const Linkedin = makeIcon('Linkedin');
 
 const imageBase = 'https://images.unsplash.com';
 
@@ -70,14 +80,13 @@ const properties = [
     baths: 7,
     size: '9,420 sq ft',
     type: 'Waterfront Villa',
-    hero: `${imageBase}/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85`,
+    hero: `${imageBase}/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85`,
     gallery: [
-      `${imageBase}/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85`,
-      `${imageBase}/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85`,
+      `${imageBase}/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85`,
+      `${imageBase}/photo-1600607687931-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85`,
       `${imageBase}/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85`,
     ],
-    summary:
-      'A glass-lined waterfront estate with double-height living spaces, private cinema, wine room, and a sunset pool deck facing the lagoon.',
+    summary: 'A glass-lined waterfront estate with double-height living spaces, private cinema, wine room, and a sunset pool deck facing the lagoon.',
     details: ['Private jetty', 'Smart climate zones', 'Staff residence', 'Six-car gallery garage'],
   },
   {
@@ -89,14 +98,13 @@ const properties = [
     baths: 6,
     size: '7,180 sq ft',
     type: 'Garden Residence',
-    hero: `${imageBase}/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1600&q=85`,
+    hero: `${imageBase}/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85`,
     gallery: [
-      `${imageBase}/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1600&q=85`,
+      `${imageBase}/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=85`,
       `${imageBase}/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85`,
       `${imageBase}/photo-1600607687644-c7171b42498b?auto=format&fit=crop&w=1600&q=85`,
     ],
-    summary:
-      'A calm contemporary home wrapped around a tropical courtyard, built for privacy, entertaining, and quiet everyday luxury.',
+    summary: 'A calm contemporary home wrapped around a tropical courtyard, built for privacy, entertaining, and quiet everyday luxury.',
     details: ['Courtyard pool', 'Chef kitchen', 'Library lounge', 'Solar backup system'],
   },
   {
@@ -108,14 +116,13 @@ const properties = [
     baths: 5,
     size: '4,850 sq ft',
     type: 'Penthouse',
-    hero: `${imageBase}/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1600&q=85`,
+    hero: `${imageBase}/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85`,
     gallery: [
-      `${imageBase}/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1600&q=85`,
+      `${imageBase}/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85`,
       `${imageBase}/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=1600&q=85`,
       `${imageBase}/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1600&q=85`,
     ],
-    summary:
-      'A sculptural penthouse with skyline terraces, warm oak interiors, gallery walls, and an owner suite that feels like a private hotel.',
+    summary: 'A sculptural penthouse with skyline terraces, warm oak interiors, gallery walls, and an owner suite that feels like a private hotel.',
     details: ['Private elevator', 'Rooftop terrace', 'Home automation', 'Concierge lobby'],
   },
   {
@@ -127,14 +134,13 @@ const properties = [
     baths: 6,
     size: '6,300 sq ft',
     type: 'Executive Estate',
-    hero: `${imageBase}/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=85`,
+    hero: `${imageBase}/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=85`,
     gallery: [
-      `${imageBase}/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=85`,
+      `${imageBase}/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=85`,
       `${imageBase}/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85`,
       `${imageBase}/photo-1600573472550-8090b5e0745e?auto=format&fit=crop&w=1600&q=85`,
     ],
-    summary:
-      'A refined family estate with mountain-view balconies, formal reception rooms, wellness suite, and discreet security planning.',
+    summary: 'A refined family estate with mountain-view balconies, formal reception rooms, wellness suite, and discreet security planning.',
     details: ['Wellness room', 'Mountain views', 'Guard house', 'Landscaped grounds'],
   },
 ];
@@ -143,7 +149,7 @@ const heroImages = [
   properties[0].hero,
   properties[1].hero,
   properties[2].hero,
-  `${imageBase}/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=85`,
+  properties[3].hero,
 ];
 
 const fadeUp = {
@@ -151,58 +157,14 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.2, 0.8, 0.2, 1] } },
 };
 
-function AnimatedModel({ theme }) {
-  const group = React.useRef();
-  const accent = theme === 'dark' ? '#d5b26f' : '#1d4f49';
-
-  useFrame((state) => {
-    if (!group.current) return;
-    group.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.35) * 0.18;
-    group.current.position.y = Math.sin(state.clock.elapsedTime * 0.7) * 0.08;
-  });
-
-  return (
-    <group ref={group} rotation={[0.08, -0.25, 0]} position={[0, -0.2, 0]}>
-      <ambientLight intensity={theme === 'dark' ? 1.6 : 1.9} />
-      <directionalLight position={[4, 6, 5]} intensity={2.2} />
-      <mesh position={[0, -0.78, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <circleGeometry args={[2.7, 72]} />
-        <meshStandardMaterial color={theme === 'dark' ? '#1a1713' : '#e8dfcf'} roughness={0.72} />
-      </mesh>
-      <mesh position={[0, 0.15, 0]}>
-        <boxGeometry args={[2.6, 1.5, 1.65]} />
-        <meshStandardMaterial color={theme === 'dark' ? '#f7efe2' : '#ffffff'} roughness={0.45} />
-      </mesh>
-      <mesh position={[0.25, 1.05, 0]}>
-        <boxGeometry args={[2.9, 0.18, 1.92]} />
-        <meshStandardMaterial color={theme === 'dark' ? '#2d2a24' : '#243d3a'} roughness={0.5} />
-      </mesh>
-      {[-0.8, 0, 0.8].map((x) => (
-        <mesh key={x} position={[x, 0.25, 0.84]}>
-          <boxGeometry args={[0.38, 0.76, 0.04]} />
-          <meshStandardMaterial color="#9fc5cf" metalness={0.1} roughness={0.08} transparent opacity={0.75} />
-        </mesh>
-      ))}
-      <mesh position={[1.22, -0.15, -0.05]}>
-        <boxGeometry args={[0.12, 1.18, 1.8]} />
-        <meshStandardMaterial color={accent} roughness={0.35} />
-      </mesh>
-      <mesh position={[-1.35, -0.53, 0.55]}>
-        <boxGeometry args={[0.5, 0.12, 0.34]} />
-        <meshStandardMaterial color={accent} roughness={0.4} />
-      </mesh>
-    </group>
-  );
-}
-
 function Navbar({ theme, setTheme, activeId, onNavigate }) {
   const [open, setOpen] = useState(false);
   const items = [
     ['residences', 'Residences'],
     ['why', 'Why choose us'],
+    ['lifestyle', 'Lifestyle'],
     ['testimonials', 'Testimonials'],
     ['faq', 'FAQ'],
-    ['contact', 'Contact'],
   ];
 
   const go = (id) => {
@@ -280,16 +242,17 @@ function Hero({ onNavigate, theme }) {
           </button>
         </motion.div>
       </motion.div>
-      <motion.div className="hero-panel" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 0.7 }}>
-        <div className="canvas-wrap">
-          <Canvas camera={{ position: [0, 1.2, 5.5], fov: 38 }} gl={{ antialias: true, alpha: true }} dpr={[1, 1.6]}>
-            <AnimatedModel theme={theme} />
-          </Canvas>
+      <motion.div className="hero-panel" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55, duration: 0.7 }} style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '16px', overflow: 'hidden', padding: 0 }}>
+        <div className="canvas-wrap" style={{ height: '240px', background: 'var(--surface-strong)', overflow: 'hidden' }}>
+           <img src={properties[index % properties.length].hero} alt="Featured Property" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
-        <div>
-          <span>Featured now</span>
-          <strong>{properties[index % properties.length].name}</strong>
-          <small>{properties[index % properties.length].price} / {properties[index % properties.length].location}</small>
+        <div style={{ padding: '20px' }}>
+          <span style={{ color: 'var(--accent)', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Featured now</span>
+          <strong style={{ fontSize: '1.4rem', margin: '4px 0 8px', display: 'block' }}>{properties[index % properties.length].name}</strong>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <small style={{ color: 'var(--muted)', fontSize: '0.95rem' }}><MapPin size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }}/>{properties[index % properties.length].location}</small>
+            <strong style={{ color: 'var(--text)' }}>{properties[index % properties.length].price}</strong>
+          </div>
         </div>
       </motion.div>
     </section>
@@ -316,23 +279,30 @@ function StatsBand() {
 
 function PropertyCard({ property, onOpen }) {
   return (
-    <motion.article className="property-card" variants={fadeUp}>
+    <motion.article className="property-card" variants={fadeUp} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <button className="property-image-button" onClick={() => onOpen(property.id)} aria-label={`Open ${property.name}`}>
         <img src={property.hero} alt={`${property.name} exterior and interior`} />
         <span>{property.type}</span>
       </button>
-      <div className="property-body">
-        <div>
-          <h3>{property.name}</h3>
-          <p><MapPin size={15} /> {property.location}</p>
+      <div className="property-body" style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+          <div>
+            <h3 style={{ fontSize: '1.35rem', marginBottom: '8px', lineHeight: 1.2 }}>{property.name}</h3>
+            <p style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--muted)', fontSize: '0.9rem', margin: 0 }}>
+              <MapPin size={15} /> {property.location}
+            </p>
+          </div>
         </div>
-        <strong>{property.price}</strong>
-        <div className="property-meta">
-          <span><BedDouble size={16} /> {property.beds}</span>
-          <span><Bath size={16} /> {property.baths}</span>
-          <span><Maximize2 size={16} /> {property.size}</span>
+        
+        <strong style={{ fontSize: '1.5rem', color: 'var(--accent)', display: 'block', marginBottom: '20px' }}>{property.price}</strong>
+        
+        <div className="property-meta" style={{ display: 'flex', justifyContent: 'space-between', gap: '10px', padding: '16px 0', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', marginBottom: '24px', flexWrap: 'nowrap' }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem' }}><BedDouble size={16} /> {property.beds}</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem' }}><Bath size={16} /> {property.baths}</span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', whiteSpace: 'nowrap' }}><Maximize2 size={16} /> {property.size}</span>
         </div>
-        <button className="text-button" onClick={() => onOpen(property.id)}>
+        
+        <button className="text-button" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center', padding: '14px', background: 'rgba(147, 112, 219, 0.1)', borderRadius: '8px', color: 'var(--text)', transition: 'background 0.2s' }} onClick={() => onOpen(property.id)} onMouseOver={(e) => e.currentTarget.style.background = 'rgba(147, 112, 219, 0.2)'} onMouseOut={(e) => e.currentTarget.style.background = 'rgba(147, 112, 219, 0.1)'}>
           View property <ArrowRight size={16} />
         </button>
       </div>
@@ -379,6 +349,94 @@ function Listings({ onOpen }) {
   );
 }
 
+function AmenitiesLifestyle() {
+  const amenities = [
+    { title: "24/7 Concierge", icon: <Building2 size={24} />, desc: "Unmatched service available at any hour." },
+    { title: "Smart Climate", icon: <Sun size={24} />, desc: "Intelligent zoning for perfect temperatures." },
+    { title: "Private Spa", icon: <Bath size={24} />, desc: "In-house wellness and relaxation facilities." },
+    { title: "Gourmet Cafe", icon: <Coffee size={24} />, desc: "Exclusive lounges and coffee bars." },
+  ];
+
+  return (
+    <section id="lifestyle" className="section" style={{ background: 'var(--surface-strong)', borderRadius: '16px', padding: '60px' }}>
+      <motion.div className="section-heading" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} variants={fadeUp}>
+        <p className="eyebrow">Amenities & Lifestyle</p>
+        <h2>More than just a home. A curated living experience.</h2>
+      </motion.div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
+        {amenities.map((item, i) => (
+          <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ padding: '24px', borderRadius: '12px', background: 'var(--surface)', border: '1px solid var(--line)' }}>
+            <div style={{ color: 'var(--accent)', marginBottom: '16px' }}>{item.icon}</div>
+            <h3>{item.title}</h3>
+            <p style={{ fontSize: '0.9rem' }}>{item.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function NeighborhoodInsights() {
+  const highlights = [
+    { area: 'Ikoyi', desc: 'Home to the prestigious Ikoyi Club, world-class golf, and elite diplomatic communities.' },
+    { area: 'Banana Island', desc: 'Nigeria’s most exclusive enclave. Highest security, private waterfronts, and serene roads.' },
+    { area: 'Victoria Island', desc: 'The financial heartbeat. Fine dining, contemporary art galleries, and vibrant high-end retail.' },
+  ];
+
+  return (
+    <section className="section split-section">
+      <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} variants={fadeUp}>
+        <p className="eyebrow">Neighborhood Insights</p>
+        <h2>Prime locations, mapped.</h2>
+        <p>Discover the finest dining, exclusive schools, and high-end shopping tailored to your new neighborhood. Our properties are situated in environments that reflect your standard of living.</p>
+        
+        <div style={{ marginTop: '30px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {highlights.map((item, i) => (
+            <motion.div key={item.area} variants={fadeUp} style={{ padding: '16px 20px', background: 'var(--surface-strong)', borderRadius: '12px', borderLeft: '4px solid var(--accent)' }}>
+              <strong style={{ display: 'block', fontSize: '1.1rem', marginBottom: '6px' }}>{item.area}</strong>
+              <span style={{ fontSize: '0.95rem', color: 'var(--muted)' }}>{item.desc}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        <button className="primary-button" style={{ marginTop: '30px' }}>Explore Full Map <MapIcon size={18} /></button>
+      </motion.div>
+      <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} style={{ height: '100%', minHeight: '560px', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--line)', background: 'var(--surface-strong)' }}>
+        <iframe 
+          src="https://maps.google.com/maps?q=Ikoyi,%20Lagos&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0, filter: 'grayscale(100%) invert(90%) hue-rotate(180deg) contrast(1.1)' }} 
+          allowFullScreen="" 
+          loading="lazy" 
+          title="Lagos Map"
+        ></iframe>
+      </motion.div>
+    </section>
+  );
+}
+
+function GlobalPartners() {
+  const partners = [
+    'Architectural Digest', 'Forbes Global Properties', 'Sotheby’s',
+    'Christie’s', 'Knight Frank', 'Savills', 'Bloomberg', 'WSJ Real Estate'
+  ];
+  return (
+    <section className="section" style={{ textAlign: 'center', padding: '80px 0', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', background: 'rgba(255,255,255,0.02)' }}>
+      <motion.p className="eyebrow" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} variants={fadeUp} style={{ marginBottom: '40px', letterSpacing: '0.2em' }}>
+        Trusted by global industry leaders
+      </motion.p>
+      <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} variants={{ show: { transition: { staggerChildren: 0.1 } } }} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 'clamp(30px, 6vw, 60px)', flexWrap: 'wrap', maxWidth: '1000px', margin: '0 auto' }}>
+        {partners.map(p => (
+          <motion.h3 key={p} variants={fadeUp} style={{ margin: 0, fontSize: '1.4rem', fontFamily: 'serif', fontStyle: 'italic', fontWeight: '400', opacity: 0.6, transition: 'opacity 0.3s ease, transform 0.3s ease', cursor: 'default' }} onMouseOver={(e) => { e.currentTarget.style.opacity = '1'; e.currentTarget.style.transform = 'scale(1.05)' }} onMouseOut={(e) => { e.currentTarget.style.opacity = '0.6'; e.currentTarget.style.transform = 'scale(1)' }}>
+            {p}
+          </motion.h3>
+        ))}
+      </motion.div>
+    </section>
+  );
+}
+
 function WhyChooseUs() {
   const items = [
     ['Verified inventory', 'Every home is screened for ownership, pricing logic, and presentation quality before it appears.'],
@@ -405,7 +463,7 @@ function WhyChooseUs() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ delay: index * 0.08, duration: 0.55 }}
           >
-            <span><ShieldCheck size={18} /></span>
+            <span style={{ background: 'rgba(147, 112, 219, 0.15)' }}><ShieldCheck size={18} /></span>
             <h3>{title}</h3>
             <p>{text}</p>
           </motion.article>
@@ -496,6 +554,22 @@ function Faq() {
   );
 }
 
+function VipNewsletter() {
+  return (
+    <section className="section" style={{ margin: '80px auto' }}>
+      <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} variants={fadeUp} style={{ padding: '80px 40px', background: 'var(--gradient)', borderRadius: '16px', color: '#fff', textAlign: 'center', boxShadow: '0 24px 60px rgba(147, 112, 219, 0.3)' }}>
+        <Mail size={40} style={{ margin: '0 auto 20px', opacity: 0.9 }} />
+        <h2 style={{ color: '#fff', marginBottom: '10px' }}>Join the VIP Club</h2>
+        <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '600px', margin: '0 auto 40px', fontSize: '1.1rem' }}>Get access to exclusive off-market listings, private tours, and architectural insights delivered straight to your inbox.</p>
+        <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', maxWidth: '500px', margin: '0 auto' }}>
+          <input type="email" placeholder="Enter your email address" style={{ padding: '16px', borderRadius: '8px', background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.4)', color: '#fff', flex: 1 }} />
+          <button className="primary-button" style={{ background: '#fff', color: '#8a2be2', border: 'none', padding: '0 30px' }}>Subscribe</button>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
+
 function Contact() {
   const [sent, setSent] = useState(false);
 
@@ -539,54 +613,114 @@ function Contact() {
   );
 }
 
+function Footer() {
+  return (
+    <footer style={{ background: 'var(--surface-strong)', padding: '80px 0 40px', marginTop: '60px', borderTop: '1px solid var(--line)' }}>
+      <div style={{ width: 'min(1180px, calc(100% - 32px))', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '60px', paddingBottom: '60px', borderBottom: '1px solid var(--line)' }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+             <span className="brand-mark">A</span>
+             <strong style={{ fontSize: '1.2rem' }}>Aura Estates</strong>
+          </div>
+          <p style={{ fontSize: '0.95rem' }}>The premier advisory for exceptional homes in Lagos and Abuja. Private, precise, and profoundly premium.</p>
+        </div>
+        <div>
+          <h3 style={{ fontSize: '1.1rem', marginBottom: '20px' }}>Explore</h3>
+          <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '12px', margin: 0, color: 'var(--muted)' }}>
+            <li><a href="#residences" style={{ color: 'inherit', textDecoration: 'none' }}>Residences</a></li>
+            <li><a href="#lifestyle" style={{ color: 'inherit', textDecoration: 'none' }}>Lifestyle</a></li>
+            <li><a href="#why" style={{ color: 'inherit', textDecoration: 'none' }}>Why Aura</a></li>
+            <li><a href="#faq" style={{ color: 'inherit', textDecoration: 'none' }}>FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style={{ fontSize: '1.1rem', marginBottom: '20px' }}>Legal</h3>
+          <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '12px', margin: 0, color: 'var(--muted)' }}>
+            <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy Policy</a></li>
+            <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Terms of Service</a></li>
+            <li><a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Cookie Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style={{ fontSize: '1.1rem', marginBottom: '20px' }}>Connect</h3>
+          <div style={{ display: 'flex', gap: '16px', color: 'var(--muted)' }}>
+             <Instagram size={24} style={{ cursor: 'pointer' }} />
+             <Twitter size={24} style={{ cursor: 'pointer' }} />
+             <Linkedin size={24} style={{ cursor: 'pointer' }} />
+          </div>
+        </div>
+      </div>
+      <div style={{ width: 'min(1180px, calc(100% - 32px))', margin: '0 auto', paddingTop: '40px', display: 'flex', justifyContent: 'space-between', color: 'var(--muted)', fontSize: '0.9rem' }}>
+        <span>&copy; {new Date().getFullYear()} Aura Estates. All rights reserved.</span>
+        <span>Designed with precision.</span>
+      </div>
+    </footer>
+  );
+}
+
 function PropertyDetail({ property, onBack }) {
   const [slide, setSlide] = useState(0);
   const image = property.gallery[slide];
 
   return (
-    <main className="detail-page">
-      <button className="back-button" onClick={onBack}>
-        <ArrowLeft size={18} /> Back to listings
-      </button>
-      <section className="detail-hero">
-        <motion.img key={image} src={image} alt={`${property.name} gallery ${slide + 1}`} initial={{ opacity: 0, scale: 1.03 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.55 }} />
-        <div className="detail-controls">
-          <button onClick={() => setSlide((value) => (value + property.gallery.length - 1) % property.gallery.length)} aria-label="Previous image">
-            <ChevronLeft size={20} />
+    <main className="detail-page" style={{ padding: '0', paddingTop: '80px' }}>
+      <section style={{ position: 'relative', height: '80vh', minHeight: '600px', width: '100vw', left: '50%', transform: 'translateX(-50%)' }}>
+        <motion.img key={image} src={image} alt={`${property.name} gallery ${slide + 1}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ position: 'absolute', inset: '0', background: 'linear-gradient(to top, var(--bg) 0%, transparent 40%)' }} />
+        
+        <div style={{ position: 'absolute', top: '40px', left: 'max(24px, calc((100vw - 1180px) / 2))', zIndex: 10 }}>
+           <button className="secondary-button" onClick={onBack} style={{ background: 'rgba(0,0,0,0.5)', color: '#fff', border: 'none', backdropFilter: 'blur(10px)' }}>
+            <ArrowLeft size={18} /> Back to listings
           </button>
-          <span>{slide + 1} / {property.gallery.length}</span>
+        </div>
+
+        <div className="detail-controls" style={{ bottom: '40px', right: 'max(24px, calc((100vw - 1180px) / 2))', padding: '12px' }}>
+          <button onClick={() => setSlide((value) => (value + property.gallery.length - 1) % property.gallery.length)} aria-label="Previous image">
+            <ChevronLeft size={24} />
+          </button>
+          <span style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>{slide + 1} / {property.gallery.length}</span>
           <button onClick={() => setSlide((value) => (value + 1) % property.gallery.length)} aria-label="Next image">
-            <ChevronRight size={20} />
+            <ChevronRight size={24} />
           </button>
         </div>
       </section>
-      <section className="detail-content">
+      
+      <div style={{ width: 'min(1180px, calc(100% - 32px))', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 380px', gap: '60px', padding: '60px 0' }}>
         <div>
-          <p className="eyebrow">{property.type}</p>
-          <h1>{property.name}</h1>
-          <p className="detail-location"><MapPin size={17} /> {property.location}</p>
-          <p>{property.summary}</p>
-        </div>
-        <aside>
-          <strong>{property.price}</strong>
-          <div className="property-meta vertical">
-            <span><BedDouble size={17} /> {property.beds} bedrooms</span>
-            <span><Bath size={17} /> {property.baths} bathrooms</span>
-            <span><Maximize2 size={17} /> {property.size}</span>
+          <p className="eyebrow" style={{ fontSize: '1rem' }}>{property.type}</p>
+          <h1 style={{ fontSize: 'clamp(3rem, 6vw, 4.5rem)', margin: '10px 0 20px' }}>{property.name}</h1>
+          <p className="detail-location" style={{ fontSize: '1.2rem', marginBottom: '30px' }}><MapPin size={20} /> {property.location}</p>
+          
+          <div style={{ padding: '30px', background: 'var(--surface-strong)', borderRadius: '16px', marginBottom: '40px' }}>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', margin: 0 }}>{property.summary}</p>
           </div>
-          <button className="primary-button" onClick={() => window.location.href = 'mailto:hello@auraestates.example?subject=Private%20viewing%20request'}>
-            Request private viewing <Mail size={18} />
+
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '20px' }}>Property Highlights</h3>
+          <section className="detail-highlights" style={{ gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+            {property.details.map((detail) => (
+              <article key={detail} style={{ background: 'var(--surface)', padding: '24px', borderRadius: '12px', border: '1px solid var(--line)' }}>
+                <Building2 size={24} />
+                <span style={{ fontSize: '1.1rem', fontWeight: '600' }}>{detail}</span>
+              </article>
+            ))}
+          </section>
+        </div>
+
+        <aside style={{ position: 'sticky', top: '120px', alignSelf: 'start', padding: '40px', background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '16px', boxShadow: 'var(--shadow)' }}>
+          <span style={{ display: 'block', fontSize: '1rem', color: 'var(--muted)', marginBottom: '10px' }}>Asking Price</span>
+          <strong style={{ display: 'block', fontSize: '2.8rem', color: 'var(--accent)', marginBottom: '30px' }}>{property.price}</strong>
+          
+          <div className="property-meta vertical" style={{ gap: '20px', marginBottom: '40px' }}>
+            <span style={{ fontSize: '1.1rem' }}><BedDouble size={20} /> {property.beds} bedrooms</span>
+            <span style={{ fontSize: '1.1rem' }}><Bath size={20} /> {property.baths} bathrooms</span>
+            <span style={{ fontSize: '1.1rem' }}><Maximize2 size={20} /> {property.size}</span>
+          </div>
+          
+          <button className="primary-button" style={{ width: '100%', height: '56px', fontSize: '1.1rem' }} onClick={() => window.location.href = 'mailto:hello@auraestates.example?subject=Private%20viewing%20request'}>
+            Request private viewing <Mail size={20} />
           </button>
         </aside>
-      </section>
-      <section className="detail-highlights">
-        {property.details.map((detail) => (
-          <article key={detail}>
-            <Building2 size={20} />
-            <span>{detail}</span>
-          </article>
-        ))}
-      </section>
+      </div>
     </main>
   );
 }
@@ -655,14 +789,18 @@ export default function App() {
         <main>
           <Hero onNavigate={navigateTo} theme={theme} />
           <StatsBand />
+          <GlobalPartners />
           <Listings onOpen={openProperty} />
+          <AmenitiesLifestyle />
           <WhyChooseUs />
+          <NeighborhoodInsights />
           <CeoWords />
           <Testimonials />
-          <Faq />
+          <VipNewsletter />
           <Contact />
         </main>
       )}
+      <Footer />
     </>
   );
 }

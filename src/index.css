@@ -1,34 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 :root {
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color-scheme: dark;
-  --bg: #0f1110;
-  --bg-soft: #171916;
-  --surface: rgba(28, 29, 25, 0.82);
-  --surface-strong: #20221d;
-  --text: #f7f3ea;
-  --muted: #b8b0a0;
-  --line: rgba(247, 243, 234, 0.14);
-  --accent: #d2aa63;
-  --accent-2: #86b7ad;
-  --button-text: #16130d;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+  --bg: #090514;
+  --bg-soft: #120a2b;
+  --surface: rgba(18, 10, 43, 0.82);
+  --surface-strong: #1e1140;
+  --text: #ffffff;
+  --muted: #a69bb8;
+  --line: rgba(147, 112, 219, 0.2);
+  --accent: #9370db;
+  --accent-2: #e0b0ff;
+  --button-text: #ffffff;
+  --shadow: 0 24px 80px rgba(147, 112, 219, 0.15);
+  --gradient: linear-gradient(135deg, #9370db, #c259ff);
 }
 
 [data-theme="light"] {
   color-scheme: light;
-  --bg: #f7f4ec;
-  --bg-soft: #ebe4d6;
-  --surface: rgba(255, 252, 245, 0.86);
-  --surface-strong: #fffaf0;
-  --text: #17201d;
-  --muted: #5f625b;
-  --line: rgba(23, 32, 29, 0.14);
-  --accent: #1f6159;
-  --accent-2: #c28c42;
-  --button-text: #fffaf0;
-  --shadow: 0 24px 70px rgba(67, 55, 31, 0.16);
+  --bg: #ffffff;
+  --bg-soft: #f8f5fd;
+  --surface: rgba(255, 255, 255, 0.86);
+  --surface-strong: #ffffff;
+  --text: #1a1525;
+  --muted: #6b637c;
+  --line: rgba(103, 58, 183, 0.1);
+  --accent: #8a2be2;
+  --accent-2: #c259ff;
+  --button-text: #ffffff;
+  --shadow: 0 24px 70px rgba(103, 58, 183, 0.08);
+  --gradient: linear-gradient(135deg, #8a2be2, #c259ff);
 }
 
 * {
@@ -44,7 +44,7 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 88% 8%, rgba(134, 183, 173, 0.14), transparent 28rem),
+    radial-gradient(circle at 88% 8%, rgba(147, 112, 219, 0.15), transparent 28rem),
     linear-gradient(180deg, var(--bg), var(--bg-soft) 48%, var(--bg));
   color: var(--text);
   overflow-x: hidden;
@@ -68,47 +68,31 @@ img {
 
 .navbar {
   position: fixed;
-  top: 18px;
-  left: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
-  width: min(1180px, calc(100% - 32px));
-  min-height: 66px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  min-height: 80px;
+  display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 10px 12px 10px 16px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  justify-content: space-between;
+  padding: 0 max(24px, calc((100vw - 1180px) / 2));
   background: var(--surface);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(18px);
-  transform: translateX(-50%);
-  overflow: visible;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--line);
+  transition: background 0.3s ease;
 }
 
 .navbar::after {
   content: "";
   position: absolute;
-  top: 9px;
-  right: 126px;
-  width: 84px;
-  height: 2px;
-  border-radius: 99px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  animation: nav-glide 4s ease-in-out infinite;
-  opacity: 0.85;
-}
-
-@keyframes nav-glide {
-  0%, 100% {
-    transform: translateX(-18px);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translateX(18px);
-    opacity: 0.9;
-  }
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient);
+  opacity: 0.9;
 }
 
 .brand,
@@ -276,21 +260,24 @@ p {
 h1 {
   max-width: 900px;
   margin-bottom: 22px;
-  font-size: clamp(3rem, 8vw, 6.8rem);
-  line-height: 0.95;
-  letter-spacing: 0;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 800;
 }
 
 h2 {
   margin-bottom: 18px;
-  font-size: clamp(2rem, 4vw, 4.3rem);
-  line-height: 1;
-  letter-spacing: 0;
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-weight: 800;
 }
 
 h3 {
   margin-bottom: 10px;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 p {
