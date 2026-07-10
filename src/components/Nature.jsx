@@ -56,7 +56,7 @@ export default function Nature({ started }) {
         }
       });
     }
-  }, [started]);
+  }, [started, butterflyData]);
 
   useFrame((s) => {
     // Animate Dust

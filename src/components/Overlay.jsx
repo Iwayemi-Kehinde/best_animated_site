@@ -1,6 +1,23 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Compass, Moon, Sun } from 'lucide-react';
+
+function SimpleIcon({ name, size = 18, className }) {
+  const paths = {
+    arrow: ['M5 12h14', 'M12 5l7 7-7 7'],
+    moon: ['M21 13.2A8.5 8.5 0 0 1 10.8 3a7 7 0 1 0 10.2 10.2Z'],
+    sun: ['M12 5V2', 'M12 22v-3', 'M5 12H2', 'M22 12h-3', 'M4.2 4.2l2.1 2.1', 'M17.7 17.7l2.1 2.1', 'M19.8 4.2l-2.1 2.1', 'M6.3 17.7l-2.1 2.1', 'M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z'],
+  };
+
+  return (
+    <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {paths[name].map((path) => <path key={path} d={path} />)}
+    </svg>
+  );
+}
+
+const ArrowRight = (props) => <SimpleIcon name="arrow" {...props} />;
+const Moon = (props) => <SimpleIcon name="moon" {...props} />;
+const Sun = (props) => <SimpleIcon name="sun" {...props} />;
 
 const titleVariants = {
   hidden: { opacity: 0, y: 50 },

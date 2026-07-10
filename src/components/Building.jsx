@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useMemo } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { extend, useFrame } from '@react-three/fiber';
 import { BuildingMaterial } from '../shaders/buildingMaterial';
 import * as THREE from 'three';
